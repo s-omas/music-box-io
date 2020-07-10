@@ -4,23 +4,31 @@ from .parse import parse
 
 setup = parse()
 
-
+from .load_json import denest
 from django.forms import ModelForm, Form
 from django_jsonforms.forms import JSONSchemaField
 
 config_schema = setup
 
-options = {
-        "no_additional_properties": True,
-        "disable_collapse": True,
-        "disable_edit_json": True,
-        "disable_properties": True
-}
+class CustomForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        dynamic_fields = denest()
+        super(CustomForm, self).__init__(*args, **kwargs)
+        for key in dynamic_fields:
+            self.fields[key] = forms.CharField(initial=dynamic_fields[key])
 
 
-class CustomForm(Form):
-    config = JSONSchemaField(schema = config_schema, options = options)
-
+# options = {
+#         "no_additional_properties": True,
+#         "disable_collapse": True,
+#         "disable_edit_json": True,
+#         "disable_properties": True
+# }
+#
+#
+# class CustomForm(Form):
+#     config = JSONSchemaField(schema = config_schema, options = options)
+#
 
 # class ConfigForm(forms.Form):
 #     grid = forms.ChoiceField(choices=[('box', 'Box'), ('none', 'None')])

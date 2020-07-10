@@ -6,5 +6,7 @@ from .forms import CustomForm
 
 from .forms import CustomForm
 
+
+
 def some_view(request):
     return render(request, 'form.html', {'form': CustomForm()})

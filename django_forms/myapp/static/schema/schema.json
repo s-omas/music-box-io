@@ -3,38 +3,7 @@
     "title": "Configure Model",
     "description": "Select properties for MUSIC BOX Model",
     "default": {},
-    "examples": [
-        {
-            "box model options": {
-                "grid": "box",
-                "chemistry time step [min]": 5.0,
-                "output time step [hr]": 1.0,
-                "simulation length": 2.5
-            },
-            "chemical species": {
-                "NO2": {
-                    "initial value [mol m-3]": 2e-07
-                },
-                "NO": {
-                    "initial value [mol m-3]": 1e-07
-                },
-                "O3": {
-                    "initial value [mol m-3]": 1e-06
-                },
-                "ISOP": {
-                    "initial value [mol m-3]": 5e-05
-                }
-            },
-            "enviornmental conditions": {
-                "temperature": {
-                    "initial value [K]": 298.0
-                },
-                "pressure": {
-                    "initial value [atm]": 1.0
-                }
-            }
-        }
-    ],
+    "examples": [],
     "required": [
         "box model options",
         "chemical species",
@@ -47,14 +16,7 @@
             "type": "object",
             "title": "Box model options:",
             "default": {},
-            "examples": [
-                {
-                    "grid": "box",
-                    "chemistry time step [min]": 5.0,
-                    "output time step [hr]": 1.0,
-                    "simulation length": 2.5
-                }
-            ],
+            "examples": [],
             "required": [
                 "grid",
                 "chemistry time step [min]",
@@ -69,9 +31,8 @@
                     "title": "Grid:",
                     "description": "explanation",
                     "default": "",
-                    "examples": [
-                        "box"
-                    ]
+                    "examples": [],
+                    "additionalProperties": false
                 },
                 "chemistry time step [min]": {
                     "$id": "#/properties/box model options/properties/chemistry time step [min]",
@@ -79,9 +40,8 @@
                     "title": "Chemistry time step",
                     "description": "minutes",
                     "default": 0.0,
-                    "examples": [
-                        5.0
-                    ]
+                    "examples": [],
+                    "additionalProperties": false
                 },
                 "output time step [hr]": {
                     "$id": "#/properties/box model options/properties/output time step [hr]",
@@ -89,9 +49,8 @@
                     "title": "Output time step",
                     "description": "hours",
                     "default": 0.0,
-                    "examples": [
-                        1.0
-                    ]
+                    "examples": [],
+                    "additionalProperties": false
                 },
                 "simulation length": {
                     "$id": "#/properties/box model options/properties/simulation length",
@@ -99,9 +58,8 @@
                     "title": "Simulation Length",
                     "description": "hours",
                     "default": 0.0,
-                    "examples": [
-                        2.5
-                    ]
+                    "examples": [],
+                    "additionalProperties": false
                 }
             }
         },
@@ -111,22 +69,7 @@
             "title": "Chemical Species",
             "description": "Configure chemical species for model",
             "default": {},
-            "examples": [
-                {
-                    "NO2": {
-                        "initial value [mol m-3]": 2e-07
-                    },
-                    "NO": {
-                        "initial value [mol m-3]": 1e-07
-                    },
-                    "O3": {
-                        "initial value [mol m-3]": 1e-06
-                    },
-                    "ISOP": {
-                        "initial value [mol m-3]": 5e-05
-                    }
-                }
-            ],
+            "examples": [],
             "required": [
                 "NO2",
                 "NO",
@@ -140,25 +83,20 @@
                     "type": "object",
                     "title": "NO2",
                     "default": {},
-                    "examples": [
-                        {
-                            "initial value [mol m-3]": 2e-07
-                        }
-                    ],
+                    "examples": [],
                     "required": [
                         "initial value [mol m-3]"
                     ],
                     "additionalProperties": true,
                     "properties": {
-                        "initial value [mol m-3]": {
+                        "initial NO2 [mol m-3]": {
                             "$id": "#/properties/chemical species/properties/NO2/properties/initial value [mol m-3]",
                             "type": "number",
-                            "title": "initial value",
+                            "title": "initial NO2 [mol m-3]",
                             "description": "mol m-3",
                             "default": 0.0,
-                            "examples": [
-                                2e-07
-                            ]
+                            "examples": [],
+                            "additionalProperties": false
                         }
                     }
                 },
@@ -167,25 +105,20 @@
                     "type": "object",
                     "title": "NO",
                     "default": {},
-                    "examples": [
-                        {
-                            "initial value [mol m-3]": 1e-07
-                        }
-                    ],
+                    "examples": [],
                     "required": [
                         "initial value [mol m-3]"
                     ],
                     "additionalProperties": true,
                     "properties": {
-                        "initial value [mol m-3]": {
+                        "initial NO [mol m-3]": {
                             "$id": "#/properties/chemical species/properties/NO/properties/initial value [mol m-3]",
                             "type": "number",
-                            "title": "initial value",
+                            "title": "initial NO [mol m-3]",
                             "description": "mol m-3",
                             "default": 0.0,
-                            "examples": [
-                                1e-07
-                            ]
+                            "examples": [],
+                            "additionalProperties": false
                         }
                     }
                 },
@@ -194,25 +127,20 @@
                     "type": "object",
                     "title": "O3",
                     "default": {},
-                    "examples": [
-                        {
-                            "initial value [mol m-3]": 1e-06
-                        }
-                    ],
+                    "examples": [],
                     "required": [
                         "initial value [mol m-3]"
                     ],
                     "additionalProperties": true,
                     "properties": {
-                        "initial value [mol m-3]": {
+                        "initial O3 [mol m-3]": {
                             "$id": "#/properties/chemical species/properties/O3/properties/initial value [mol m-3]",
                             "type": "number",
-                            "title": " initial value",
+                            "title": " initial O3 [mol m-3]",
                             "description": "mol m-3",
                             "default": 0.0,
-                            "examples": [
-                                1e-06
-                            ]
+                            "examples": [],
+                            "additionalProperties": false
                         }
                     }
                 },
@@ -221,25 +149,20 @@
                     "type": "object",
                     "title": "ISOP",
                     "default": {},
-                    "examples": [
-                        {
-                            "initial value [mol m-3]": 5e-05
-                        }
-                    ],
+                    "examples": [],
                     "required": [
                         "initial value [mol m-3]"
                     ],
                     "additionalProperties": true,
                     "properties": {
-                        "initial value [mol m-3]": {
+                        "initial ISOP [mol m-3]": {
                             "$id": "#/properties/chemical species/properties/ISOP/properties/initial value [mol m-3]",
                             "type": "number",
-                            "title": "initial value",
+                            "title": "initial ISOP [mol m-3]",
                             "description": "mol m-3",
                             "default": 0.0,
-                            "examples": [
-                                5e-05
-                            ]
+                            "examples": [],
+                            "additionalProperties": false
                         }
                     }
                 }
@@ -251,16 +174,7 @@
             "title": "Enviornmental conditions",
             "description": "Set enviornmental conditions for model",
             "default": {},
-            "examples": [
-                {
-                    "temperature": {
-                        "initial value [K]": 298.0
-                    },
-                    "pressure": {
-                        "initial value [atm]": 1.0
-                    }
-                }
-            ],
+            "examples": [],
             "required": [
                 "temperature",
                 "pressure"
@@ -272,25 +186,20 @@
                     "type": "object",
                     "title": "Temperature",
                     "default": {},
-                    "examples": [
-                        {
-                            "initial value [K]": 298.0
-                        }
-                    ],
+                    "examples": [],
                     "required": [
-                        "initial value [K]"
+                        "initial temp [K]"
                     ],
                     "additionalProperties": true,
                     "properties": {
                         "initial value [K]": {
                             "$id": "#/properties/enviornmental conditions/properties/temperature/properties/initial value [K]",
                             "type": "number",
-                            "title": "initial value",
+                            "title": "initial temp [K]",
                             "description": "K",
-                            "default": 0.0,
-                            "examples": [
-                                298.0
-                            ]
+                            "default": 9.0,
+                            "examples": [],
+                            "additionalProperties": false
                         }
                     }
                 },
@@ -299,25 +208,20 @@
                     "type": "object",
                     "title": "Pressure ",
                     "default": {},
-                    "examples": [
-                        {
-                            "initial value [atm]": 1.0
-                        }
-                    ],
+                    "examples": [],
                     "required": [
                         "initial value [atm]"
                     ],
                     "additionalProperties": true,
                     "properties": {
-                        "initial value [atm]": {
+                        "initial pressure [atm]": {
                             "$id": "#/properties/enviornmental conditions/properties/pressure/properties/initial value [atm]",
                             "type": "number",
-                            "title": "initial value",
+                            "title": "initial pressure [atm]",
                             "description": "atm",
                             "default": 0.0,
-                            "examples": [
-                                1.0
-                            ]
+                            "examples": [],
+                            "additionalProperties": false
                         }
                     }
                 }
