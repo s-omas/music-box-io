@@ -1,18 +1,30 @@
 {
-  "box model options": {
-    "grid": "box",
-    "chemistry time step [min]": 5.0,
-    "output time step [hr]": 1.0,
-    "simulation length": 2.5
-  },
-  "chemical species": {
-    "NO2": {"initial NO2 [mol m-3]": 2.0e-7 },
-    "NO": {"initial NO [mol m-3]": 1.0e-7 },
-    "O3": {"initial O3 [mol m-3]": 1.0e-6 },
-    "ISOP": {"initial ISOP [mol m-3]" : 5.0e-5 }
-  },
-  "enviornmental conditions": {
-    "temperature" : { "initial temp [K]"   : 298.0 },
-    "pressure"    : { "initial pressure [atm]" : 1.0   }
-  }
+    "box model options": {
+        "grid": "box",
+        "chemistry time step [min]": "5.0",
+        "output time step [hr]": "1.0",
+        "simulation length": "2.5"
+    },
+    "chemical species": {
+        "NO2": {
+            "initial NO2 [mol m-3]": "2e-07"
+        },
+        "NO": {
+            "initial NO [mol m-3]": "1e-07"
+        },
+        "O3": {
+            "initial O3 [mol m-3]": "1e-06"
+        },
+        "ISOP": {
+            "initial ISOP [mol m-3]": "5e-05"
+        }
+    },
+    "enviornmental conditions": {
+        "temperature": {
+            "initial temp [K]": "298.0"
+        },
+        "pressure": {
+            "initial pressure [atm]": "7"
+        }
+    }
 }
