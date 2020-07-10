@@ -16,16 +16,24 @@ def denest():
             if type(nest1[x]) is dict:
                 nest2 = nest1[x]
                 for y in nest2:
-                    new_dict.update({y: nest2[y]})
+                    if type(nest2[y]) is dict:
+                        nest3 = nest2[y]
+                        for z in nest3:
+                            if type(nest3[z]) is dict:
+                                nest4 = nest3[z]
+                                for a in nest4:
+                                    new_dict.update({a: nest4[a]})
+                            else:
+                                new_dict.update({z: nest3[z]})
+                    else:
+                        new_dict.update({y: nest2[y]})
             else:
                 new_dict.update({x: nest1[x]})
-
-
 
     return new_dict
 
 
-#populates config file with data from web form fields
+# populates config file with data from web form fields
 
 def repopulate():
     with open('/Users/simonthomas/music-box-io1/django_forms/myapp/static/config_dict.json') as f:
@@ -40,7 +48,17 @@ def repopulate():
             if type(nest1[x]) is dict:
                 nest2 = nest1[x]
                 for y in nest2:
-                    config[key][x].update({y: config_dict[y]})
+                    if type(nest2[y]) is dict:
+                        nest3 = nest2[y]
+                        for z in nest3:
+                            if type(nest3[z]) is dict:
+                                nest4 = nest3[z]
+                                for a in nest4:
+                                    config[key][x][y][z].update({a: config_dict[a]})
+                            else:
+                                config[key][x][y].update({z: config_dict[z]})
+                    else:
+                        config[key][x].update({y: config_dict[y]})
             else:
                 config[key].update({x: config_dict[x]})
 
